@@ -3,7 +3,7 @@ package org.uqbar.gatoEncerrado
 @Accessors
 class Admin {
 	
-	var List laberintos 
+	var List<Laberinto> laberintos 
 
 	
 	
