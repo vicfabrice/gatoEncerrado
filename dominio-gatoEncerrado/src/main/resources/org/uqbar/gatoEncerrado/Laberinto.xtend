@@ -30,6 +30,7 @@ class Laberinto {
 		this.habitaciones.add(nueva)
 	}
 	
+	// la habitacion la deberia pasar por parametro
 	def definirHabitacionComoInicial(Habitacion start){
 		this.habitacionInicial = start
 		start.marcarIncicial()

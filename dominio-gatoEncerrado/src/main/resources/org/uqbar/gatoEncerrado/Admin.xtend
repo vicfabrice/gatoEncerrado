@@ -13,6 +13,9 @@ class Admin {
 	}
 	
 	def void modificarLaberinto(){}
+	/*para mi conviene separarlo en por ej: cambiar nombre lab
+	 * definir hab inicial nueva.. etc
+	 */
 	
 	
 	def void eliminarLaberinto(Laberinto noVaMas){

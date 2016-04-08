@@ -4,7 +4,7 @@ package org.uqbar.gatoEncerrado
 class Habitacion {
 	
 	var String nombreHabitacion
-	// la habitacion lleva un nombre: ej Cocina
+	// la habitacion lleva un nombre: por ej Cocina
 	var List habitacionesPermitidas
 	var Item itemDisponible
 	var Boolean esInicial
