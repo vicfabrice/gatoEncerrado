@@ -1,14 +1,15 @@
 package org.uqbar.gatoEncerrado
+import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
 class Habitacion {
 	
-	var String nombreHabitacion
+	String nombreHabitacion
 	// la habitacion lleva un nombre: por ej Cocina
-	var List habitacionesPermitidas
-	var Item itemDisponible
-	var Boolean esInicial
-	var Boolean esFinal
+	List <Habitacion> habitacionesPermitidas
+	Item itemDisponible
+	Boolean esInicial
+	Boolean esFinal
 	
 	/*una habitacion puede ser inicial y final en un mismo laberinto
 	 * por ejemplo: laberinto: "Cursar Programacion UI"
@@ -36,6 +37,7 @@ class Habitacion {
 	def desmarcarFinal(){
 		this.esFinal = False
 	}
+	
 	def usarItem(){}
 		
 	def agarrarItem(){}

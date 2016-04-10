@@ -1,11 +1,12 @@
 package org.uqbar.gatoEncerrado
-
+import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.List //para poder manejar listas
 
 @Accessors
 class Admin {
 	
-	var List<Laberinto> laberintos 
+	List<Laberinto> laberintos 
+	Habitacion nuevaHab
 
 		
 	def crearLaberinto(){
@@ -22,11 +23,11 @@ class Admin {
 		this.laberintos.remove(noVaMas)
 	}
 	
-	/* no es responsabilidad de la habitacion??
-	 * def crearHabitacion(Sring conQueNombre){
-	 * Habitacion crear(conQueNombre)
-	 * }
-	*/
+	// fijarse estos metodos para abajo, no forman parte de la vista??
+	def crearHabitacion(Sring conQueNombre){
+		this.nuevaHab = new Habitacion()
+	}
+	
 	
 	def marcarHabitacion(){}
 	

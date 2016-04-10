@@ -1,11 +1,13 @@
 package org.uqbar.gatoEncerrado
+import org.eclipse.xtend.lib.annotations.Accessors
+
 
 @Accessors 
 class Participante {
 	
-	val Item[]inventario = newItemArrayOfSize(15)
-	val List<Laberinto> labertintosSuperados
-	val List<Laberinto> laberintosAbandonados
+	Item[]inventario = newItemArrayOfSize(15)
+	List<Laberinto> labertintosSuperados
+	List<Laberinto> laberintosAbandonados
 	
 	def elegirLaberinto(){}
 	

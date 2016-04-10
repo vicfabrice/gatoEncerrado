@@ -1,15 +1,16 @@
 package org.uqbar.gatoEncerrado
+import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors 
 class Laberinto {
 	
-	var String nombreLaberinto 
+	String nombreLaberinto 
 	//viendo el ej de las ultimas paginas el lab lleva nombre, ej: casa
-	var List<Habitacion> habitaciones
+	List<Habitacion> habitaciones
 	
 	//ser inicial y / o final pueden ser atributos booleanos de la habitacion
-	var Habitacion habInicial
-	var Habitacion habFinal 
+	Habitacion habInicial
+	Habitacion habFinal 
 	
 	def crear(List<Habitacion> habs){
 		this.habitaciones = habs
