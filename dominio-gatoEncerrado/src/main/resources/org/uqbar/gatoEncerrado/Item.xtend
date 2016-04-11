@@ -9,6 +9,8 @@ class Item {
 		super()// usar el new de la clase padre
 		this.nombre = comoSellama //inicializar mi variable
 	}
+	
+	
 }
 	
 }

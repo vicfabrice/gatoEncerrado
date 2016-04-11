@@ -5,6 +5,7 @@ import java.util.List //para poder manejar listas
 @Accessors
 class Admin {
 	
+	String nombre
 	List<Laberinto> laberintos 
 	Habitacion nuevaHab
 
@@ -13,8 +14,9 @@ class Admin {
 		laberitos = newArrayList		
 	}
 	
-	def void modificarLaberinto(){}
-	/*para mi conviene separarlo en por ej: cambiar nombre lab
+	
+	/*def void modificarLaberinto(){}
+	 * para mi conviene separarlo en por ej: cambiar nombre lab
 	 * definir hab inicial nueva.. etc
 	 */
 	
@@ -23,7 +25,6 @@ class Admin {
 		this.laberintos.remove(noVaMas)
 	}
 	
-	// fijarse estos metodos para abajo, no forman parte de la vista??
 	def crearHabitacion(Sring conQueNombre){
 		this.nuevaHab = new Habitacion()
 	}

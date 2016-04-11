@@ -5,7 +5,6 @@ import org.eclipse.xtend.lib.annotations.Accessors
 class Habitacion {
 	
 	String nombreHabitacion
-	// la habitacion lleva un nombre: por ej Cocina
 	List <Habitacion> habitacionesPermitidas
 	Item itemDisponible
 	Boolean esInicial
@@ -18,29 +17,31 @@ class Habitacion {
 	
 	def crearHabitacion(String unNombre){
 		this.nombreHabitacion = unNombre
-		this.esInicial = False
-		this.esFinal = False
+		this.esInicial = false
+		this.esFinal = false
 	}
 	
 	def marcarInicial(){
-		this.esInicial = True
+		this.esInicial = true
 	}
 	
 	def marcarFinal(){
-		this.esFinal = True
+		this.esFinal = true
 	}
 	
 	def desmarcarInicial(){
-		this.esInicial = False
+		this.esInicial = false
 	}
 	
 	def desmarcarFinal(){
-		this.esFinal = False
+		this.esFinal = false
 	}
 	
 	def usarItem(){}
 		
 	def agarrarItem(){}
 	
-	def salirDeLaberinto(){}
+	def salirDeLaberinto(){
+		
+	}
 }
