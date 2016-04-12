@@ -1,15 +1,15 @@
  package org.uqbar.gatoEncerrado
 import org.eclipse.xtend.lib.annotations.Accessors
-
+import java.util.List
 
 @Accessors 
 class Participante {
 	
 	List <Item> inventario 
-	List<Laberinto> labertintosSuperados
 	List<Laberinto> laberintosAbandonados
 	Laberinto laberintoActual
-	Habitacion habitacionActual  
+	Habitacion habitacionActual
+	List<Laberinto> laberintosSuperados
 	
 	def elegirLaberinto(){}
 	
