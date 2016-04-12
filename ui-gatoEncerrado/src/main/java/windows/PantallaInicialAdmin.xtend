@@ -13,6 +13,7 @@ import org.uqbar.gatoEncerrado.Habitacion
 import org.uqbar.gatoEncerrado.Juego
 import org.uqbar.gatoEncerrado.Laberinto
 import org.uqbar.gatoEncerrado.appModels.JuegoAppModel
+import org.uqbar.arena.widgets.CheckBox
 
 class PantallaInicialAdmin extends SimpleWindow<JuegoAppModel> {
 
@@ -42,7 +43,7 @@ class PantallaInicialAdmin extends SimpleWindow<JuegoAppModel> {
 		contentPanel.layout = new ColumnLayout(3)
 		this.crearListadoDeLaberintos(contentPanel)
 		this.crearListadoDeHabitaciones(contentPanel)
-//		this.crearDescripcionDeHabitaciones(contentPanel)
+		this.crearDescripcionDeHabitaciones(contentPanel)
 	}
 
 	def crearListadoDeLaberintos(Panel owner) {
@@ -87,7 +88,25 @@ class PantallaInicialAdmin extends SimpleWindow<JuegoAppModel> {
 			caption = "Quitar Laberinto"
 //				onClick [ | new QuitarLaberintoWindow(this, this.modelObject.laberinto).open ]
 		]
+		
+		
 	}
+	
+	def crearDescripcionDeHabitaciones(Panel owner) {
+		val Panel panelDeDescripciones = new Panel(owner)
+		panelDeDescripciones.layout = new VerticalLayout
+		
+		new Label(panelDeDescripciones) => [
+			new Label(panelDeDescripciones).text = "Habitacion seleccionada:"
+			bindValueToProperty("laberintoSeleccionado.habitaciones").adapter = new PropertyAdapter(Habitacion, "nombreHabitacion")
+		]
+		new Label(panelDeDescripciones).text = "es inicial?"
+		new CheckBox(panelDeDescripciones) => [
+			bindValueToProperty("habitacion.esInicial").adapter = new PropertyAdapter (Habitacion, "esInicial")
+		]
+		}
+	
+	
 
 	override protected addActions(Panel actionsPanel) {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
