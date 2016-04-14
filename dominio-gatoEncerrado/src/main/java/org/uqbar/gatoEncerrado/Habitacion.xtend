@@ -6,8 +6,7 @@ import java.util.List
 class Habitacion {
 	
 	String nombreHabitacion
-	List <Habitacion> habitacionesPermitidas
-	Item itemDisponible
+	List<String> items
 	Boolean esInicial
 	Boolean esFinal
 	

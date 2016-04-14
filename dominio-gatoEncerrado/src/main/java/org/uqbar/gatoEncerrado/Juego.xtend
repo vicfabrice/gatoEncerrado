@@ -2,7 +2,7 @@ package org.uqbar.gatoEncerrado
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.List import org.uqbar.commons.utils.Observable
 
-//para poder manejar listas
+
 
 @Accessors
 @Observable

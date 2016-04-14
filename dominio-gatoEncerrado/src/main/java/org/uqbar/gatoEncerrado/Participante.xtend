@@ -5,7 +5,7 @@ import java.util.List
 @Accessors 
 class Participante {
 	
-	List <Item> inventario 
+	List <String> inventario 
 	List<Laberinto> laberintosAbandonados
 	Laberinto laberintoActual
 	Habitacion habitacionActual
@@ -13,7 +13,7 @@ class Participante {
 	
 	def elegirLaberinto(){}
 	
-	def agregarItemAlInventario(Item item){
+	def agregarItemAlInventario(String item){
 		
 		inventario.add(item)
 		
