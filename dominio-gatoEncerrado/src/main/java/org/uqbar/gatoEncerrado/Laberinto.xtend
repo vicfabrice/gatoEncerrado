@@ -2,16 +2,17 @@ package org.uqbar.gatoEncerrado
 
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.List
+import java.util.ArrayList
 
 @Accessors
 class Laberinto {
 	String nombreLaberinto
-	List<Habitacion> habitaciones
+	ArrayList<Habitacion> habitaciones
 
 	Habitacion habitacionInicial
 	Habitacion habitacionFinal
 
-	def crear(List<Habitacion> habs) {
+	def crear(ArrayList<Habitacion> habs) {
 		this.habitaciones = habs
 	}
 

@@ -10,9 +10,9 @@ class Participante {
 	 
 	Laberinto laberintoActual
 	Habitacion habitacionActual
-	List<Laberinto> laberintosSuperados
-	List<Laberinto> laberintosAbandonados
-	List <String> inventario
+	ArrayList<Laberinto> laberintosSuperados
+	ArrayList<Laberinto> laberintosAbandonados
+	ArrayList <String> inventario
 	
 	def void elegirLaberinto(List<Laberinto> laberintos, Laberinto jugarEste){
 		
@@ -25,22 +25,29 @@ class Participante {
 		
 	}
 	
-	def elegirItem(String item){
-		
-		habitacionInicial
-		
-		
-		
-	}
 	
 	def agregarItemAlInventario(String item){
-		
-		inventario.add(item)
+		if (this.inventario.size < 15){
+			inventario.add(item)
+		} // debería tirar una excepción si ya son 15
 		
 	}
-	def verInventario(){}
 	
-	def usarItem(){}
+	def usarItem(String item){
+		
+		var ArrayList<String> aRecorrer= this.habitacionActual.itemsPermitidos
+		for (String s : aRecorrer){
+			if (aRecorrer.contains(item)){
+					this.inventario.remove(item)
+			}
+		}
+	}
+	
+	def verInventario(){}
+	def verLaberintosSuperados(){}
+	def verLaberintosAbandonados(){}
+	
+	
 	
 	def abandonarJuego(){
 		

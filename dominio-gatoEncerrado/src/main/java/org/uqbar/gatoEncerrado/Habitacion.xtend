@@ -1,13 +1,14 @@
 package org.uqbar.gatoEncerrado
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.List
+import java.util.ArrayList
 
 @Accessors
 class Habitacion {
 	
 	String nombreHabitacion
-	List<String> items
-	List<String> itemsPermitidos
+	ArrayList<String> items
+	ArrayList<String> itemsPermitidos
 	Boolean esInicial
 	Boolean esFinal
 	
