@@ -1,17 +1,28 @@
- package org.uqbar.gatoEncerrado
+
+package org.uqbar.gatoEncerrado
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.List
+import java.util.ArrayList
 
 @Accessors 
 class Participante {
 	
-	List <String> inventario 
-	List<Laberinto> laberintosAbandonados
+	 
 	Laberinto laberintoActual
 	Habitacion habitacionActual
 	List<Laberinto> laberintosSuperados
+	List<Laberinto> laberintosAbandonados
+	List <String> inventario
 	
-	def elegirLaberinto(){}
+	def void elegirLaberinto(List<Laberinto> laberintos, Laberinto jugarEste){
+		
+		for (Laberinto lab : laberintos){
+			if (lab.nombreLaberinto.contains(jugarEste.nombreLaberinto)){
+					this.laberintoActual = jugarEste
+			}
+		}
+		
+	}
 	
 	def agregarItemAlInventario(String item){
 		

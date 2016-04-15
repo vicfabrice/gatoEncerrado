@@ -96,15 +96,17 @@ class PantallaInicialAdmin extends SimpleWindow<JuegoAppModel> {
 		val Panel panelDeDescripciones = new Panel(owner)
 		panelDeDescripciones.layout = new VerticalLayout
 		
-		new Label(panelDeDescripciones) => [
-			new Label(panelDeDescripciones).text = "Habitacion seleccionada:"
-			bindValueToProperty("laberintoSeleccionado.habitaciones").adapter = new PropertyAdapter(Habitacion, "nombreHabitacion")
-		]
-		new Label(panelDeDescripciones).text = "es inicial?"
-		new CheckBox(panelDeDescripciones) => [
-			bindValueToProperty("habitacion.esInicial").adapter = new PropertyAdapter (Habitacion, "esInicial")
-		]
+		new Label(panelDeDescripciones).text = "Habitacion Seleccionada:"
+		new Label (panelDeDescripciones)=>[value <=>"nombreHabitacion"]
+			
+		// no me deja usar eso <=>
+		//new Label(panelDeDescripciones).text = "es inicial?"
+		//new CheckBox(panelDeDescripciones) => [
+			//bindValueToProperty("habitacionSeleccionada.esInicial").adapter = new PropertyAdapter (Habitacion, "esInicial")
+		//]
+		
 		}
+	
 	
 	
 
