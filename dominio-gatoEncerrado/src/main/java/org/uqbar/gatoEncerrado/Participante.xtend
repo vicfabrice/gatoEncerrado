@@ -3,6 +3,7 @@ package org.uqbar.gatoEncerrado
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.List
 import java.util.ArrayList
+import java.lang.Exception 
 
 @Accessors 
 class Participante {
@@ -26,20 +27,20 @@ class Participante {
 	}
 	
 	
-	def agregarItemAlInventario(String item){
+	def void agregarItemAlInventario(String item){
 		if (this.inventario.size < 15){
 			inventario.add(item)
 		} // debería tirar una excepción si ya son 15
 		
 	}
 	
-	def usarItem(String item){
+	def void usarItem(String item) throws NoPermitidoException{
 		
 		var ArrayList<String> aRecorrer= this.habitacionActual.itemsPermitidos
 		for (String s : aRecorrer){
 			if (aRecorrer.contains(item)){
 					this.inventario.remove(item)
-			}
+			}else (throw new NoPermitidoException)
 		}
 	}
 	
