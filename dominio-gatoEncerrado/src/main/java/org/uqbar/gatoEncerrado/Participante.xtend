@@ -19,8 +19,17 @@ class Participante {
 		for (Laberinto lab : laberintos){
 			if (lab.nombreLaberinto.contains(jugarEste.nombreLaberinto)){
 					this.laberintoActual = jugarEste
+					this.habitacionActual = jugarEste.habitacionInicial
 			}
 		}
+		
+	}
+	
+	def elegirItem(String item){
+		
+		habitacionInicial
+		
+		
 		
 	}
 	

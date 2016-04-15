@@ -7,6 +7,7 @@ class Habitacion {
 	
 	String nombreHabitacion
 	List<String> items
+	List<String> itemsPermitidos
 	Boolean esInicial
 	Boolean esFinal
 	
