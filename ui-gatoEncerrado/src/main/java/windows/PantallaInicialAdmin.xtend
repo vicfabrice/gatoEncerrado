@@ -15,6 +15,7 @@ import org.uqbar.gatoEncerrado.Laberinto
 import org.uqbar.gatoEncerrado.appModels.JuegoAppModel
 import org.uqbar.arena.widgets.CheckBox
 
+
 class PantallaInicialAdmin extends SimpleWindow<JuegoAppModel> {
 
 	new(WindowOwner parent, Juego model) {
@@ -31,13 +32,9 @@ class PantallaInicialAdmin extends SimpleWindow<JuegoAppModel> {
 			fontSize = 25
 		]
 
-//		new Label(mainPanel) => [
-//			new LabeledTextBox(mainPanel) => [
-//			text = "hola:"
-//			width = 250
-//			bindValueToProperty("nombre") 
-//			fontSize = 15
-//		]
+		new Label(mainPanel).text = "hola:"
+		new Label (mainPanel).bindValueToProperty("nombre") 
+
 		// Agregamos el contenido
 		val Panel contentPanel = new Panel(mainPanel)
 		contentPanel.layout = new ColumnLayout(3)
@@ -97,13 +94,40 @@ class PantallaInicialAdmin extends SimpleWindow<JuegoAppModel> {
 		panelDeDescripciones.layout = new VerticalLayout
 		
 		new Label(panelDeDescripciones).text = "Habitacion Seleccionada:"
-		new Label (panelDeDescripciones)=>[value <=>"nombreHabitacion"]
+		new Label (panelDeDescripciones).bindValueToProperty("nombreHabitacion")
+		
+		new Label(panelDeDescripciones).text = "Es Inicial?"
+		new CheckBox (panelDeDescripciones)=>[
+			//bindEnabledToProperty ("esInicial") // ver esta propiedad
+			bindValueToProperty("esInicial")
+			]
 			
-		// no me deja usar eso <=>
-		//new Label(panelDeDescripciones).text = "es inicial?"
-		//new CheckBox(panelDeDescripciones) => [
-			//bindValueToProperty("habitacionSeleccionada.esInicial").adapter = new PropertyAdapter (Habitacion, "esInicial")
-		//]
+		new Label(panelDeDescripciones).text = "Es Final?"
+		new CheckBox (panelDeDescripciones)=>[
+			//bindEnabledToProperty ("esFinal") // ver esta propiedad
+			bindValueToProperty("esFinal")
+			
+		new Label (panelDeDescripciones).text = "Acciones"
+		new List (panelDeDescripciones)=>[
+			bindItemsToProperty ("acciones")
+			bindValueToProperty("accionSeleccionada")
+			setWidth (220)
+			height = 220
+		]
+		
+		new Button (panelDeDescripciones) => [
+			caption = "Agregar accion"
+			setAsDefault // ni idea, lo vi asi en el apunte
+			//onClick[ | agregarAccion] // ahi deberia derivar a otra ventana o notify
+		]
+		
+		new Button (panelDeDescripciones) =>[
+			caption = "Quitar accion"
+			setAsDefault
+			//onClick[ | quitarAccion]
+		]
+]
+// tercel panel (fachada) terminado, lastima que no lo pueda correr y ver como queda
 		
 		}
 	
