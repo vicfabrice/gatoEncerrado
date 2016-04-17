@@ -1,7 +1,5 @@
 package windows
 
-import org.uqbar.arena.windows.SimpleWindow
-import org.uqbar.gatoEncerrado.appModels.AccionUsarAppModel
 import org.uqbar.arena.windows.WindowOwner
 import org.uqbar.arena.widgets.Panel
 import org.uqbar.arena.layout.VerticalLayout
@@ -11,10 +9,12 @@ import org.uqbar.arena.widgets.Selector
 import org.uqbar.gatoEncerrado.Inventario
 import org.uqbar.arena.widgets.Button
 import org.uqbar.arena.layout.HorizontalLayout
+import org.uqbar.gatoEncerrado.AccionUsar
+import org.uqbar.arena.windows.Dialog
 
-class AccionUsarWindow extends SimpleWindow<AccionUsarAppModel> {
+class AccionUsarWindow extends Dialog<AccionUsar> {
 	
-	new(WindowOwner parent, AccionUsarAppModel model) {
+	new(WindowOwner parent, AccionUsar model) {
 		super(parent, model)
 	}
 	
@@ -53,7 +53,7 @@ class AccionUsarWindow extends SimpleWindow<AccionUsarAppModel> {
 		owner.layout = new HorizontalLayout
 		new Button(owner) => [
 			caption = "Cancelar"
-//			onClick [|new AgarraElementoHabitacionWindow(this, this.modelObject.laberinto).open]
+			onClick [|this.close]
 		]
 		new Button(owner) => [
 			caption = "Agregar"

@@ -3,15 +3,16 @@ package windows
 import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.widgets.Panel
 import org.uqbar.arena.windows.WindowOwner
-import org.uqbar.gatoEncerrado.appModels.AgregarAccionAppModel
 import org.uqbar.arena.layout.VerticalLayout
 import org.uqbar.arena.widgets.Label
 import org.uqbar.arena.widgets.Button
 import org.uqbar.arena.layout.HorizontalLayout
+import org.uqbar.gatoEncerrado.AccionAgarrar
+import org.uqbar.gatoEncerrado.AccionUsar
 
-class AgregarAccionWindow extends SimpleWindow<AgregarAccionAppModel> {
+class AgregarAccionWindow extends SimpleWindow<PantallaInicialAdmin> {
 	
-	new(WindowOwner parent, AgregarAccionAppModel model) {
+	new(WindowOwner parent, PantallaInicialAdmin model) {
 		super(parent, model)
 	}
 	
@@ -33,11 +34,13 @@ class AgregarAccionWindow extends SimpleWindow<AgregarAccionAppModel> {
 		]
 		new Button(panelTresBotones) => [
 			caption = "Agregar Accion de Agarrar un Elemento"
-//			onClick [|new AgarraElementoHabitacionWindow(this, this.modelObject.laberinto).open]
+			val accion2 = new AccionAgarrar()
+			onClick [|new AccionAgarrarWindow(this, accion2).open]
 		]
 		new Button(panelTresBotones) => [
 			caption = "Agregar Accion de Usar un Elemento"
-//			onClick [|new UsarElementoHabitacionWindow(this, this.modelObject.laberinto).open]
+			val accion3 = new AccionUsar()
+			onClick [|new AccionUsarWindow(this, accion3).open]
 		]
 		
 	} 

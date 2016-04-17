@@ -1,19 +1,19 @@
 package windows
 
-import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.widgets.Panel
 import org.uqbar.arena.windows.WindowOwner
 import org.uqbar.arena.layout.VerticalLayout
 import org.uqbar.arena.widgets.Label
 import org.uqbar.arena.widgets.Button
 import org.uqbar.arena.layout.HorizontalLayout
-import org.uqbar.gatoEncerrado.appModels.AccionAgarrarAppModel
 import org.uqbar.arena.widgets.TextBox
+import org.uqbar.gatoEncerrado.AccionAgarrar
+import org.uqbar.arena.windows.Dialog
 
-class AccionAgarrarWindow extends SimpleWindow<AccionAgarrarAppModel> {
+class AccionAgarrarWindow extends Dialog<AccionAgarrar> {
 	
-	new(WindowOwner parent, AccionAgarrarAppModel model) {
-		super(parent, model)
+	new(WindowOwner owner, AccionAgarrar model) {
+		super(owner, model)
 	}
 	
 	override createMainTemplate(Panel mainPanel) {
@@ -25,7 +25,7 @@ class AccionAgarrarWindow extends SimpleWindow<AccionAgarrarAppModel> {
 		new Label(mainPanel).text = "escriba el elemento que aparecera en la habitacion"
 		
 		new TextBox (mainPanel)=>[
-			bindValueToProperty ("elementoNuevo")
+			bindValueToProperty ("elemento")
 			width = 200
 		]
 		
@@ -35,11 +35,11 @@ class AccionAgarrarWindow extends SimpleWindow<AccionAgarrarAppModel> {
 		
 		new Button(panelDosBotones) => [
 			caption = "cancelar"
-//			onClick [|new AgregarAccionHabitacionWindow(this, this.modelObject.laberinto).open]
+			onClick [|this.close]
 		]
 		new Button(panelDosBotones) => [
 			caption = "Agregar"
-//			onClick [|new AgarraElementoHabitacionWindow(this, this.modelObject.laberinto).open]
+			onClick [|this.close]//editar
 		]
 		
 	} 
