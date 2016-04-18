@@ -99,17 +99,17 @@ class PantallaInicialAdmin extends SimpleWindow<JuegoAppModel> {
 		new Label(panelDeDescripciones).text = "Es Inicial?"
 		new CheckBox (panelDeDescripciones)=>[
 			//bindEnabledToProperty ("esInicial") // ver esta propiedad
-			bindValueToProperty("esInicial")
+			bindValueToProperty("habitacionSeleccionada.esInicial")
 			]
 			
 		new Label(panelDeDescripciones).text = "Es Final?"
 		new CheckBox (panelDeDescripciones)=>[
 			//bindEnabledToProperty ("esFinal") // ver esta propiedad
-			bindValueToProperty("esFinal")
+			bindValueToProperty("habitacionSeleccionada.esFinal")
 			
 		new Label (panelDeDescripciones).text = "Acciones"
 		new List (panelDeDescripciones)=>[
-			bindItemsToProperty ("acciones")
+			bindItemsToProperty ("habitacionSeleccionada.acciones")
 			bindValueToProperty("accionSeleccionada")
 			setWidth (220)
 			height = 220

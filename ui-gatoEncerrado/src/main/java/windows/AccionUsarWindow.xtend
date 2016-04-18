@@ -6,7 +6,7 @@ import org.uqbar.arena.layout.VerticalLayout
 import org.uqbar.arena.layout.ColumnLayout
 import org.uqbar.arena.widgets.Label
 import org.uqbar.arena.widgets.Selector
-import org.uqbar.gatoEncerrado.Inventario
+import org.uqbar.gatoEncerrado.Habitacion
 import org.uqbar.arena.widgets.Button
 import org.uqbar.arena.layout.HorizontalLayout
 import org.uqbar.gatoEncerrado.AccionUsar
@@ -34,7 +34,7 @@ class AccionUsarWindow extends Dialog<AccionUsar> {
 	def seleccionarLaAccion(Panel owner) {
 		owner.layout = new VerticalLayout
 		new Label(owner).text = "seleccione el elemento que pueda ser usado"
-		new Selector<Inventario>(owner)=> [ //ver!
+		new Selector<Habitacion>(owner)=> [ //ver!
 			allowNull(false)
 			bindValueToProperty("items")
 		]
