@@ -3,7 +3,7 @@ package org.uqbar.gatoEncerrado
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.List
 import java.util.ArrayList
-import java.lang.Exception 
+import java.lang.Exception import org.uqbar.commons.model.UserException
 
 @Accessors 
 class Participante {
@@ -34,13 +34,13 @@ class Participante {
 		
 	}
 	
-	def void usarItem(String item) throws NoPermitidoException{
+	def void usarItem(String item){
 		
 		var ArrayList<String> aRecorrer= this.habitacionActual.itemsPermitidos
 		for (String s : aRecorrer){
 			if (aRecorrer.contains(item)){
 					this.inventario.remove(item)
-			}else (throw new NoPermitidoException)
+			}else (throw new UserException("no se puede realizar action"))
 		}
 	}
 	

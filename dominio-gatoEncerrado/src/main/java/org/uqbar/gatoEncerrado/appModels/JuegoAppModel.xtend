@@ -14,6 +14,7 @@ class JuegoAppModel {
 	Juego juego
 	Laberinto laberintoSeleccionado
 	Habitacion habitacionSeleccionada
+	String nombreHabitacion
 	String admin
 	
 	new(Juego j){
