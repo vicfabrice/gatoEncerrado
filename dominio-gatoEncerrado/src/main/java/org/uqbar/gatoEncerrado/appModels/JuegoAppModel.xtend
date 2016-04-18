@@ -6,6 +6,7 @@ import org.uqbar.gatoEncerrado.Juego
 import org.uqbar.gatoEncerrado.Laberinto
 import java.util.List
 import org.uqbar.gatoEncerrado.Habitacion
+import org.uqbar.gatoEncerrado.Accion
 
 @Observable
 @Accessors
@@ -16,6 +17,7 @@ class JuegoAppModel {
 	Habitacion habitacionSeleccionada
 	String nombreHabitacion
 	String admin
+	Accion accionSeleccionada
 	
 	new(Juego j){
 		this.juego = j

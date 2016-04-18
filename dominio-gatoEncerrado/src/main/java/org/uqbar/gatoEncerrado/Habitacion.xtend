@@ -11,6 +11,7 @@ class Habitacion {
 	ArrayList<String> itemsPermitidos
 	Boolean esInicial
 	Boolean esFinal
+	ArrayList<Accion> acciones
 	
 	/*una habitacion puede ser inicial y final en un mismo laberinto
 	 * por ejemplo: laberinto: "Cursar Programacion UI"
