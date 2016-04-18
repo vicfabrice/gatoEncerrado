@@ -33,7 +33,7 @@ class PantallaInicialAdmin extends SimpleWindow<JuegoAppModel> {
 		]
 
 		new Label(mainPanel).text = "hola:"
-		new Label (mainPanel).bindValueToProperty("nombre") 
+		new Label (mainPanel).bindValueToProperty("admin") 
 
 		// Agregamos el contenido
 		val Panel contentPanel = new Panel(mainPanel)

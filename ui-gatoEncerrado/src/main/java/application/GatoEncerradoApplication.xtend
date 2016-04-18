@@ -7,7 +7,7 @@ import org.uqbar.gatoEncerrado.Juego
 class GatoEncerradoApplication extends Application{
 	
 	override protected createMainWindow() {
-		new PantallaInicialAdmin(this, new Juego)
+		new PantallaInicialAdmin(this, new Juego("Pablo"))
 	}
 	
 	def static void main(String[] args) {

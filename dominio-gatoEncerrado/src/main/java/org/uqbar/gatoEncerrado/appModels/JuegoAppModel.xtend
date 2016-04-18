@@ -14,9 +14,11 @@ class JuegoAppModel {
 	Juego juego
 	Laberinto laberintoSeleccionado
 	Habitacion habitacionSeleccionada
+	String admin
 	
 	new(Juego j){
 		this.juego = j
+		this.admin = juego.admin
 	}
 	
 	def List<Laberinto> getLaberintos(){

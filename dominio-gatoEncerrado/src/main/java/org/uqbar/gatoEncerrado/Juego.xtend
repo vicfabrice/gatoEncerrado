@@ -7,10 +7,12 @@ import java.util.List import org.uqbar.commons.utils.Observable
 @Accessors
 @Observable
 class Juego {
-	List<Laberinto> laberintos 
+	List<Laberinto> laberintos
+	String admin 
 	
-	new(){
+	new(String nombreadmin){
 		laberintos = newArrayList
+		this.admin = nombreadmin
 	}
 		
 	
