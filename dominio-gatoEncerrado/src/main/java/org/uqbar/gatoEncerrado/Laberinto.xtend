@@ -6,14 +6,15 @@ import java.util.ArrayList
 
 @Accessors
 class Laberinto {
+	
 	String nombreLaberinto
+	String descripcion 
+	
 	ArrayList<Habitacion> habitaciones
 
-	Habitacion habitacionInicial
-	Habitacion habitacionFinal
 
-	def crear(ArrayList<Habitacion> habs) {
-		this.habitaciones = habs
+	def new(String nombreLaberinto, String descripcion, String nombreHabitacion, String accion, String item, String itemDos) {
+		// this.habitaciones = habs
 	}
 
 	def crear() {

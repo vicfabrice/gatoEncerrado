@@ -1,26 +1,38 @@
 package org.uqbar.gatoEncerrado
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.List import org.uqbar.commons.utils.Observable
-
-
+import java.util.ArrayList
+import java.util.Collection
 
 @Accessors
 @Observable
 class Juego {
-	List<Laberinto> laberintos
+	
+	static final Juego instance = new Juego()
+	
 	String admin 
+	Collection<Laberinto> laberintos = new ArrayList<Laberinto>
 	
-	new(String nombreadmin){
-		laberintos = newArrayList
+	
+	new(){
 		this.admin = nombreadmin
-	}
 		
-	
-	def void eliminarLaberinto(Laberinto noVaMas){
-		this.laberintos.remove(noVaMas)
+		this.addLaberinto("Laberinto 1" "MacGyverInt" "Habitacion del Mal" "Ir a escalera" "Lentes" "Pila AA")
+		this.addLaberinto("Laberinto 2" "Date un respiro" "Habitacion para novatos" "Caminar a la derecha" "Escalera" "Largavista")
+		this.addLaberinto("Laberinto 3" "El tiempo es oro" "Habitacion dorada" "Saltar la pared" "Bomba" "Pizza")
+		this.addLaberinto("Laberinto 4" "Aprobando la materia" "Habitacion Tenes un 7" "Aprobar" "Angular" "CSS")
 	}
 	
-	def void agregarLaberinto(Laberinto laberinto){
-		laberintos.add(laberinto)
+	def static Juego getInstance(){
+		
+		return instance
+	}	
+	
+	def void addLaberinto(String nombreLaberinto, String descripcion, String nombreHabitacion, String accion, String item, String itemDos){
+		laberintos.add(new Laberinto(nombreLaberinto, descripcion, nombreHabitacion, accion, item, itemDos))
 	}
+	
+	}
+	
+	
 }
