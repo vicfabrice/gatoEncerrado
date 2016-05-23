@@ -9,31 +9,39 @@ class Laberinto {
 	
 	String nombreLaberinto
 	String descripcion 
+	String nombreHabitacion
+	String accion
+	List <String> items
+	
 	
 	ArrayList<Habitacion> habitaciones
-
-
-	def new(String nombreLaberinto, String descripcion, String nombreHabitacion, String accion, String item, String itemDos) {
-		// this.habitaciones = habs
+	
+	new() {
+		super()	
 	}
 
-	def crear() {
-		this.habitaciones = newArrayList
+
+	new(String nombreLaberinto, String descripcion, String nombreHabitacion, String accion, String item, String itemDos) {
+		
+		this.nombreLaberinto = nombreLaberinto
+		this.descripcion = descripcion
+		this.nombreHabitacion = nombreHabitacion
+		this.accion = accion
+		this.items.add("item")
+		this.items.add("itemDos")
 	}
 
-	def agregarHabitacion(Habitacion nueva) {
-		this.habitaciones.add(nueva)
-	}
 
+	
 	// la habitacion la deberia pasar por parametro
-	def definirHabitacionComoInicial(Habitacion start) {
-		this.habitacionInicial = start
-		start.esInicial = true
-	}
+	//def definirHabitacionComoInicial(Habitacion start) {
+		//this.habitacionInicial = start
+		//start.esInicial = true
+	//}
 
-	def definirHabitacionComoFinal(Habitacion finish) {
-		this.habitacionFinal = finish
-		finish.marcarFinal
-	}
+	//def definirHabitacionComoFinal(Habitacion finish) {
+		//this.habitacionFinal = finish
+		//finish.marcarFinal
+	//}
 
 }
