@@ -9,26 +9,26 @@ class Laberinto {
 	
 	String nombreLaberinto
 	String descripcion 
-	String nombreHabitacion
+
 	String accion
-	List <String> items
+	List <String> inventario
 	
-	
-	ArrayList<Habitacion> habitaciones
+	ArrayList<String> habitaciones
 	
 	new() {
 		super()	
 	}
 
 
-	new(String nombreLaberinto, String descripcion, String nombreHabitacion, String accion, String item, String itemDos) {
+	new(String nombreLaberinto, String descripcion, String nombreHabitacion1,String nombreHabitacion2, String accion, String item, String itemDos) {
 		
 		this.nombreLaberinto = nombreLaberinto
 		this.descripcion = descripcion
-		this.nombreHabitacion = nombreHabitacion
+		this.habitaciones.add("nombreHabitacion1")
+		this.habitaciones.add("nombreHabitacion2")
 		this.accion = accion
-		this.items.add("item")
-		this.items.add("itemDos")
+		this.inventario.add("item")
+		this.inventario.add("itemDos")
 	}
 
 

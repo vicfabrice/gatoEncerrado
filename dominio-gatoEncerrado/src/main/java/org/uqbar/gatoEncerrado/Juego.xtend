@@ -17,10 +17,10 @@ class Juego {
 	new(){
 		//this.admin = nombreadmin
 		
-		this.addLaberinto("Laberinto 1", "MacGyverInt", "Habitacion del Mal", "Ir a escalera", "Lentes", "Pila AA")
-		this.addLaberinto("Laberinto 2", "Date un respiro", "Habitacion para novatos", "Caminar a la derecha", "Escalera", "Largavista")
-		this.addLaberinto("Laberinto 3", "El tiempo es oro", "Habitacion dorada", "Saltar la pared", "Bomba", "Pizza")
-		this.addLaberinto("Laberinto 4", "Aprobando la materia", "Habitacion Tenes un 7", "Aprobar", "Angular", "CSS")
+		this.addLaberinto("Laberinto 1", "MacGyverInt", "Habitacion del Mal","Habitacion del bien", "Ir a escalera", "Lentes", "Pila AA")
+		this.addLaberinto("Laberinto 2", "Date un respiro", "Habitacion para novatos","Habitacion para genios", "Caminar a la derecha", "Escalera", "Largavista")
+		this.addLaberinto("Laberinto 3", "El tiempo es oro", "Habitacion dorada","Habitacion plateada", "Saltar la pared", "Bomba", "Pizza")
+		this.addLaberinto("Laberinto 4", "Aprobando la materia", "Habitacion Tenes un 7","Habitacion Tenes un 10", "Aprobar", "Angular", "CSS")
 	}
 	
 	def static Juego getInstance(){
@@ -28,9 +28,11 @@ class Juego {
 		return instance
 	}	
 	
-	def void addLaberinto(String nombreLaberinto, String descripcion, String nombreHabitacion, String accion, String item, String itemDos){
-		laberintos.add(new Laberinto(nombreLaberinto, descripcion, nombreHabitacion, accion, item, itemDos))
+	def void addLaberinto(String nombreLaberinto, String descripcion, String nombreHabitacion1, String nombreHabitacion2, String accion, String item, String itemDos){
+		laberintos.add(new Laberinto(nombreLaberinto, descripcion, nombreHabitacion1, nombreHabitacion2, accion, item, itemDos))
 	}
+	
+	
 	
 	
 	}
