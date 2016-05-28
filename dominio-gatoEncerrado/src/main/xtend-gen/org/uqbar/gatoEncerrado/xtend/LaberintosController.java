@@ -1,14 +1,17 @@
 package org.uqbar.gatoEncerrado.xtend;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.server.Request;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
+import org.omg.CORBA.UserException;
+import org.uqbar.gatoEncerrado.Accion;
 import org.uqbar.gatoEncerrado.Juego;
 import org.uqbar.gatoEncerrado.Laberinto;
 import org.uqbar.xtrest.api.Result;
@@ -45,7 +48,7 @@ public class LaberintosController extends ResultFactory {
     {
       response.setContentType("application/json");
       final Integer idParticipante = Integer.valueOf(participanteId);
-      final Collection<Laberinto> laberintos = Juego.getLaberintosParaParticipante(idParticipante);
+      final ArrayList<Laberinto> laberintos = Juego.getLaberintosParaParticipante(idParticipante);
       String _json = this._jSONUtils.toJson(laberintos);
       _xblockexpression = ResultFactory.ok(_json);
     }
@@ -54,15 +57,56 @@ public class LaberintosController extends ResultFactory {
   
   @Get("/laberinto/:laberintoId/:participanteId")
   public Result iniciarLaberinto(final String laberinto, final String participante, final String laberintoId, final String participanteId, final String target, final Request baseRequest, final HttpServletRequest request, final HttpServletResponse response) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method getLaberinto(Integer, Integer) is undefined for the type Class<Juego>"
-      + "\ntoJson cannot be resolved");
+    Result _xblockexpression = null;
+    {
+      response.setContentType("application/json");
+      final Integer idParticipante = Integer.valueOf(participanteId);
+      final Integer idLaberinto = Integer.valueOf(laberintoId);
+      Result _xtrycatchfinallyexpression = null;
+      try {
+        Laberinto _laberinto = Juego.getLaberinto(idParticipante, idLaberinto);
+        String _json = this._jSONUtils.toJson(_laberinto);
+        _xtrycatchfinallyexpression = ResultFactory.ok(_json);
+      } catch (final Throwable _t) {
+        if (_t instanceof UserException) {
+          final UserException e = (UserException)_t;
+          _xtrycatchfinallyexpression = ResultFactory.notFound(((("No existe laberinto con el id " + idLaberinto) + " para el participante con id ") + idParticipante));
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
+      }
+      _xblockexpression = _xtrycatchfinallyexpression;
+    }
+    return _xblockexpression;
   }
   
   @Get("/realizar-accion/:idHabitacion/:idAccion/:idParticipante")
   public Result getRealizarAccion(final String idHabitacion, final String idAccion, final String idParticipante, final String target, final Request baseRequest, final HttpServletRequest request, final HttpServletResponse response) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method realizarAccion(Integer, Integer, Integer) is undefined for the type Class<Juego>");
+    Result _xblockexpression = null;
+    {
+      response.setContentType("application/json");
+      final Integer habitacionId = Integer.valueOf(idHabitacion);
+      final Integer accionId = Integer.valueOf(idAccion);
+      final Integer participanteId = Integer.valueOf(idParticipante);
+      Result _xtrycatchfinallyexpression = null;
+      try {
+        Result _xblockexpression_1 = null;
+        {
+          final Accion resultadoRealizarAccion = Juego.realizarAccion(accionId, habitacionId, participanteId);
+          _xblockexpression_1 = ResultFactory.ok("{ status : \'ok\' }");
+        }
+        _xtrycatchfinallyexpression = _xblockexpression_1;
+      } catch (final Throwable _t) {
+        if (_t instanceof UserException) {
+          final UserException e = (UserException)_t;
+          return ResultFactory.notFound((("No se puede realizar accion \'" + idAccion) + "\'"));
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
+      }
+      _xblockexpression = _xtrycatchfinallyexpression;
+    }
+    return _xblockexpression;
   }
   
   public static void main(final String[] args) {

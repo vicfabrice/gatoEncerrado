@@ -11,8 +11,9 @@ class Juego {
 	static final Juego instance = new Juego()
 	
 	Participante idUsuario
-	Collection<Laberinto> laberintos = new ArrayList<Laberinto>
+	ArrayList<Laberinto> laberintos = new ArrayList<Laberinto>
 	Integer idLaberinto
+	Laberinto laberintoActual
 	
 	
 	new(){
@@ -35,8 +36,31 @@ class Juego {
 	}
 	
 	def static getLaberintosParaParticipante(Integer integer) {
-		return instance.laberintos
+		if (integer == "Pablo24"){
+		return instance.laberintos} 
 	}
+	
+	def static getLaberinto(Integer idUsuario, Integer idLaberinto) {
+        
+        //val ArrayList<Laberinto> laberintosPosibles = instance.getLaberintosParaParticipante(idUsuario)
+        instance.laberintoActual=instance.buscarId(idLaberinto)
+	}
+	
+	def Laberinto buscarId(Integer idLab){
+	
+	for(var i = 0 ;i <this.laberintos.size() ; i++){
+            if(this.laberintos.get(i).getIdLaberinto()== idLab){
+            	return this.laberintos.get(i);
+	} 
+	}
+	}
+	
+	def static realizarAccion(Integer idHabitacion, Integer idAccion, Integer idUsuario) {
+		instance.laberintoActual.buscarIdHab(idHabitacion).buscarIdAccion(idAccion)
+	}
+	
+	
+
 	
 	
 	

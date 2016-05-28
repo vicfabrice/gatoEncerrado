@@ -1,5 +1,8 @@
 package org.uqbar.gatoEncerrado
 
+import org.eclipse.xtend.lib.annotations.Accessors
+
+@Accessors
 class Accion{
 	
 	Integer idAccion

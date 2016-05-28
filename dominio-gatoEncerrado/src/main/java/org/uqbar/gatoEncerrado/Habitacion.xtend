@@ -8,7 +8,7 @@ class Habitacion {
 	
 	String nombreHabitacion
 	Integer idHabitacion
-	ArrayList<String> acciones
+	ArrayList<Accion> acciones
 	Integer idAccion
 		
 	new(Integer unInteger, String unNombre,String unaAccion) {
@@ -21,10 +21,17 @@ class Habitacion {
 	def addAcciones(String unString) {
 		val accionNueva = new Accion(idAccion,unString)
 		idAccion = idAccion +20
+		this.acciones.add(accionNueva)
+		}
+	
+	
+	
+	def buscarIdAccion(Integer idAcc) {
+	
+	for(var i = 0 ;i <this.acciones.size() ; i++){
+            if(this.acciones.get(i).getIdAccion()== idAcc){
+            	return this.acciones.get(i);
+	} 
 	}
 	
-	def getNombre() {
-		return this.nombreHabitacion
-	}
-	
-}
+}}

@@ -38,22 +38,19 @@ class Laberinto {
 		val habitacionNueva = new Habitacion (idHabitacion, unstring,accion)
 		idHabitacion = idHabitacion +1
 		if (idHabitacion == 1){
-			habInicial = habitacionNueva.getNombre()
+			habInicial = habitacionNueva.getNombreHabitacion()
 		}
-		else habFinal = habitacionNueva.getNombre()
+		else habFinal = habitacionNueva.getNombreHabitacion()
+	}
+	
+	def buscarIdHab(Integer idHab) {
+	
+	for(var i = 0 ;i <this.habitaciones.size() ; i++){
+            if(this.habitaciones.get(i).getIdHabitacion()== idHab){
+            	return this.habitaciones.get(i);
+	} 
 	}
 
-
-	
-	// la habitacion la deberia pasar por parametro
-	//def definirHabitacionComoInicial(Habitacion start) {
-		//this.habitacionInicial = start
-		//start.esInicial = true
-	//}
-
-	//def definirHabitacionComoFinal(Habitacion finish) {
-		//this.habitacionFinal = finish
-		//finish.marcarFinal
-	//}
+  }
 
 }
