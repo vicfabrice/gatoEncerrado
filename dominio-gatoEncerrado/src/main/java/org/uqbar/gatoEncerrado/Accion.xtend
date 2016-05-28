@@ -1,9 +1,19 @@
 package org.uqbar.gatoEncerrado
 
 class Accion{
-	//clase abstracta, padre de AccionUsar, AccionAgarrar y AccionIr
+	
+	Integer idAccion
+	String nombreAccion
+	
 	new (){
 		super()
+	}
+	
+	new(Integer integer, String string) {
+		
+		this.idAccion = integer
+		this.nombreAccion = string
+		
 	}
 	
 }

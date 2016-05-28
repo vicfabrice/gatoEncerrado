@@ -8,13 +8,17 @@ import java.lang.Exception import org.uqbar.commons.model.UserException
 @Accessors 
 class Participante {
 	
-	 
-	Laberinto laberintoActual
-	Habitacion habitacionActual
-	ArrayList<Laberinto> laberintosSuperados
-	ArrayList<Laberinto> laberintosAbandonados
+	
+	String idUsuario 
 	ArrayList <String> inventario
 	
+	new (String usuario){ 
+		
+		this.idUsuario = usuario
+		this.inventario = new ArrayList<String>() 
+	}
+	
+	/*
 	def void elegirLaberinto(List<Laberinto> laberintos, Laberinto jugarEste){
 		
 		for (Laberinto lab : laberintos){
@@ -24,7 +28,7 @@ class Participante {
 			}
 		}
 		
-	}
+	}*/
 	
 	
 	def void agregarItemAlInventario(String item){
@@ -35,31 +39,8 @@ class Participante {
 	}
 	
 	def void usarItem(String item){
-		
-		var ArrayList<String> aRecorrer= this.habitacionActual.itemsPermitidos
-		for (String s : aRecorrer){
-			if (aRecorrer.contains(item)){
-					this.inventario.remove(item)
-			}else (throw new UserException("no se puede realizar action"))
-		}
-	}
-	
-	def verInventario(){}
-	def verLaberintosSuperados(){}
-	def verLaberintosAbandonados(){}
-	
-	
-	
-	def abandonarJuego(){
-		
-		laberintosAbandonados.add(laberintoActual)
-	}
-	
-	def salirDelLaberinto(){
-		
-		if (habitacionActual.esFinal == true){
-			laberintosSuperados.add(laberintoActual)
-		}  
+		this.inventario.remove(item)
 		
 	}
-}
+	}
+	

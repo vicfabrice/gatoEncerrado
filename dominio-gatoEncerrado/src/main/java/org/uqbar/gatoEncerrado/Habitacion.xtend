@@ -7,44 +7,24 @@ import java.util.ArrayList
 class Habitacion {
 	
 	String nombreHabitacion
-	ArrayList<String> items
-	ArrayList<String> itemsPermitidos
-	Boolean esInicial
-	Boolean esFinal
-	ArrayList<Accion> acciones
-	
-	/*una habitacion puede ser inicial y final en un mismo laberinto
-	 * por ejemplo: laberinto: "Cursar Programacion UI"
-	 * habitacion: "Aula 60"
-	 */
-	
-	def crearHabitacion(String unNombre){
-		this.nombreHabitacion = unNombre
-		this.esInicial = false
-		this.esFinal = false
-	}
-	
-	def marcarInicial(){
-		this.esInicial = true
-	}
-	
-	def marcarFinal(){
-		this.esFinal = true
-	}
-	
-	def desmarcarInicial(){
-		this.esInicial = false
-	}
-	
-	def desmarcarFinal(){
-		this.esFinal = false
-	}
-	
-	def usarItem(){}
+	Integer idHabitacion
+	ArrayList<String> acciones
+	Integer idAccion
 		
-	def agarrarItem(){}
-	
-	def salirDeLaberinto(){
-		
+	new(Integer unInteger, String unNombre,String unaAccion) {
+		this.idHabitacion = unInteger
+		this.nombreHabitacion= unNombre
+		this.addAcciones(unaAccion)
+		this.idAccion = 1
 	}
+	
+	def addAcciones(String unString) {
+		val accionNueva = new Accion(idAccion,unString)
+		idAccion = idAccion +20
+	}
+	
+	def getNombre() {
+		return this.nombreHabitacion
+	}
+	
 }

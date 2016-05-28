@@ -3,9 +3,8 @@ package org.uqbar.gatoEncerrado.xtend
 import org.uqbar.xtrest.api.XTRest
 import org.uqbar.xtrest.api.annotation.Controller
 import org.uqbar.xtrest.api.annotation.Get
-import org.uqbar.xtrest.api.annotation.Post
+//import org.uqbar.xtrest.api.annotation.Post
 import org.uqbar.xtrest.json.JSONUtils
-import org.uqbar.gatoEncerrado.Participante
 import org.uqbar.gatoEncerrado.Juego
 import org.omg.CORBA.UserException
 
